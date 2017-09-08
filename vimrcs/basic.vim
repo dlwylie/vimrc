@@ -1,4 +1,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" dwylie - Several (commented) edits throughout; [un|re]sets I could put in their own file, function calls and such I was less
+" sanguine about, so...
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer: 
 "       Amir Salihefendic
 "       http://amix.dk - amix@amix.dk
@@ -93,14 +98,19 @@ endif
 set ruler
 
 " Height of the command bar
-set cmdheight=2
+" dwylie - not with byobu &c., no thank you.
+" set cmdheight=2
+set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
 set hid
 
 " Configure backspace so it acts as it should act
-set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
+" dwylie - many long years of these settings for me, so...
+" set backspace=eol,start,indent
+" set whichwrap+=<,>,h,l
+set backspace=eol,indent
+set whichwrap=s
 
 " Ignore case when searching
 set ignorecase
@@ -123,7 +133,9 @@ set magic
 " Show matching brackets when text indicator is over them
 set showmatch 
 " How many tenths of a second to blink when matching brackets
-set mat=2
+" dwylie - a little longer 
+" set mat=2
+set mat=5
 
 " No annoying sound on errors
 set noerrorbells
@@ -138,7 +150,9 @@ endif
 
 
 " Add a bit extra margin to the left
-set foldcolumn=1
+" dwylie - what?  no.
+" set foldcolumn=1
+set foldcolumn=0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -178,9 +192,13 @@ set ffs=unix,dos,mac
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
+" dwylie - call it paranoia.
+" set nobackup
+" set nowb
+" set noswapfile
 set nobackup
-set nowb
-set noswapfile
+set wb
+set swapfile
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -197,8 +215,11 @@ set shiftwidth=4
 set tabstop=4
 
 " Linebreak on 500 characters
+" dwylie - or 130.
+" set lbr
+" set tw=500
 set lbr
-set tw=500
+set tw=130
 
 set ai "Auto indent
 set si "Smart indent
@@ -218,8 +239,9 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <c-space> ?
+" dwylie - no thank you.
+" map <space> /
+" map <c-space> ?
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
@@ -267,6 +289,7 @@ catch
 endtry
 
 " Return to last edit position when opening files (You want this!)
+" dwylie - not changing this, just noting it.  (i DO want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
@@ -284,9 +307,11 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remap VIM 0 to first non-blank character
-map 0 ^
+" dwylie - 0 means 0
+" map 0 ^
 
 " Move a line of text using ALT+[jk] or Command+[jk] on mac
+" dwylie - wish this worked cuz it looks (situationally) MAD useful :C
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
@@ -308,9 +333,10 @@ fun! CleanExtraSpaces()
     call setreg('/', old_query)
 endfun
 
-if has("autocmd")
-    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
-endif
+" dwylie - doing this kills stegsnow
+" if has("autocmd")
+"     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+" endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
