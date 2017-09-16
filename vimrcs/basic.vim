@@ -110,7 +110,7 @@ set hid
 " set backspace=eol,start,indent
 " set whichwrap+=<,>,h,l
 set backspace=eol,indent
-set whichwrap=s
+set whichwrap=b,s
 
 " Ignore case when searching
 set ignorecase
@@ -211,15 +211,15 @@ set expandtab
 set smarttab
 
 " 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+" set shiftwidth=4
+" set tabstop=4
 
 " Linebreak on 500 characters
-" dwylie - or 130.
+" dwylie - or 120.
 " set lbr
 " set tw=500
 set lbr
-set tw=130
+set tw=120
 
 set ai "Auto indent
 set si "Smart indent
