@@ -109,7 +109,7 @@ set hid
 " dwylie - many long years of these settings for me, so...
 " set backspace=eol,start,indent
 " set whichwrap+=<,>,h,l
-set backspace=eol,indent
+set backspace=eol,start,indent
 set whichwrap=b,s
 
 " Ignore case when searching
