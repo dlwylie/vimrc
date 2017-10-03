@@ -15,6 +15,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set font according to system
 " dwylie - leave my fonts alone, hey?
+"     alternate comment, to be blamed on my opioids in conjunction with my sleeping pills:
+"     "Hey!  amix!  Leave them fonts alone!"
+"     ...ohgodsosorry
 " if has("mac") || has("macunix")
 "     set gfn=Hack:h14,Source\ Code\ Pro:h15,Menlo:h15
 " elseif has("win16") || has("win32")
