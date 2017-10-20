@@ -10,6 +10,6 @@ set nottimeout
 " yeah okay check only one letter every so often because of :effort: to get a workaround set up
 " until then, awesome.vimrc gives me...
 
-set background=dark
 colorscheme peaksea
+set background=dark
 
